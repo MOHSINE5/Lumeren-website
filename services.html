@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Lumeren Opticians</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .services-detail-section {
+            padding: 4rem 4% 8rem;
+            background: var(--cream);
+        }
+
+        .service-detail {
+            max-width: 1200px;
+            margin: 0 auto 6rem;
+            background: white;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .service-detail:last-child {
+            margin-bottom: 0;
+        }
+
+        .service-header-img {
+            height: 300px;
+            background: linear-gradient(135deg, var(--ocean), var(--sky));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-header-img::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.15), transparent);
+        }
+
+        .service-content {
+            padding: 3rem;
+        }
+
+        .service-content h2 {
+            font-size: 2.5rem;
+            color: var(--midnight);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-intro {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .service-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-box {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--sky);
+        }
+
+        .feature-box h4 {
+            font-size: 1.3rem;
+            color: var(--ocean);
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-box p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .service-details-list {
+            margin: 2rem 0;
+        }
+
+        .service-details-list h3 {
+            font-size: 1.8rem;
+            color: var(--ocean);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-details-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-details-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--sand);
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .service-details-list li:last-child {
+            border-bottom: none;
+        }
+
+        .service-details-list li::before {
+            content: '✓';
+            color: var(--sky);
+            font-weight: bold;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .pricing-info {
+            background: var(--sand);
+            padding: 2rem;
+            border-radius: 4px;
+            margin-top: 2rem;
+        }
+
+        .pricing-info h4 {
+            font-size: 1.4rem;
+            color: var(--midnight);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-info p {
+            color: var(--text-light);
+            margin: 0.5rem 0;
+        }
+
+        .service-cta {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .service-content {
+                padding: 2rem;
+            }
+
+            .service-content h2 {
+                font-size: 2rem;
+            }
+
+            .service-features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <header class="page-header">
+        <h1>Our Services</h1>
+        <p>Comprehensive eye care solutions tailored to your unique vision needs and lifestyle</p>
+    </header>
+
+    <section class="services-detail-section">
+        <!-- Eye Examinations -->
+        <div class="service-detail animate-on-scroll">
+            <div class="service-header-img">🔬</div>
+            <div class="service-content">
+                <h2>Comprehensive Eye Examinations</h2>
+                <p class="service-intro">
+                    Our state-of-the-art eye examinations go beyond basic vision testing. We use advanced diagnostic
+                    technology to assess your overall eye health, detect potential issues early, and ensure optimal
+                    visual performance.
+                </p>
+
+                <div class="service-features-grid">
+                    <div class="feature-box">
+                        <h4>Advanced Technology</h4>
+                        <p>Utilizing cutting-edge diagnostic equipment including digital retinal imaging and OCT
+                            scanning for comprehensive analysis.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Expert Optometrists</h4>
+                        <p>Our certified optometrists bring decades of combined experience in comprehensive eye care.
+                        </p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Detailed Reports</h4>
+                        <p>Receive comprehensive reports with clear explanations of your eye health and vision status.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="service-details-list">
+                    <h3>What's Included</h3>
+                    <ul>
+                        <li>Visual acuity testing for distance and near vision</li>
+                        <li>Refraction assessment for precise prescription</li>
+                        <li>Eye muscle movement and coordination evaluation</li>
+                        <li>Peripheral vision testing</li>
+                        <li>Intraocular pressure measurement (glaucoma screening)</li>
+                        <li>Digital retinal photography</li>
+                        <li>Comprehensive eye health examination</li>
+                        <li>Personalized vision correction recommendations</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-info">
+                    <h4>Investment</h4>
+                    <p><strong>Standard Examination:</strong> $125 - $175</p>
+                    <p><strong>Comprehensive with Imaging:</strong> $200 - $250</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">Most insurance plans accepted. Contact us for
+                        coverage details.</p>
+                </div>
+
+                <div class="service-cta">
+                    <a href="contact.html" class="btn btn-primary">Book Eye Exam</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prescription Glasses -->
+        <div class="service-detail animate-on-scroll">
+            <div class="service-header-img">👓</div>
+            <div class="service-content">
+                <h2>Custom Prescription Glasses</h2>
+                <p class="service-intro">
+                    Experience the perfect fusion of precise optical correction and sophisticated style. Our custom
+                    prescription glasses are tailored to your unique vision needs and personal aesthetic preferences.
+                </p>
+
+                <div class="service-features-grid">
+                    <div class="feature-box">
+                        <h4>Precision Fitting</h4>
+                        <p>Detailed measurements ensure perfect alignment and optimal comfort for all-day wear.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Premium Lenses</h4>
+                        <p>Choose from a wide range of high-quality lens options including anti-glare, blue light
+                            protection, and progressive designs.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Designer Frames</h4>
+                        <p>Curated selection of frames from world-renowned designers and independent artisans.</p>
+                    </div>
+                </div>
+
+                <div class="service-details-list">
+                    <h3>Our Process</h3>
+                    <ul>
+                        <li>Personal style consultation with optical specialist</li>
+                        <li>Frame selection from our curated collection</li>
+                        <li>Precise facial measurements and fitting</li>
+                        <li>Lens customization based on lifestyle needs</li>
+                        <li>Quality control inspection before delivery</li>
+                        <li>Final fitting and adjustment</li>
+                        <li>Complimentary follow-up adjustments</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-info">
+                    <h4>Investment</h4>
+                    <p><strong>Complete Glasses (frame + lenses):</strong> Starting at $299</p>
+                    <p><strong>Premium Collection:</strong> $499 - $899</p>
+                    <p><strong>Luxury Designer Frames:</strong> $699 - $1,499</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">Flexible payment plans available.</p>
+                </div>
+
+                <div class="service-cta">
+                    <a href="contact.html" class="btn btn-primary">Schedule Consultation</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Lenses -->
+        <div class="service-detail animate-on-scroll">
+            <div class="service-header-img">👁️</div>
+            <div class="service-content">
+                <h2>Contact Lens Fitting & Care</h2>
+                <p class="service-intro">
+                    Discover the freedom of contact lenses with our comprehensive fitting service. We offer an extensive
+                    selection of premium lenses and provide ongoing care to ensure optimal comfort and eye health.
+                </p>
+
+                <div class="service-features-grid">
+                    <div class="feature-box">
+                        <h4>Expert Fitting</h4>
+                        <p>Precise measurements and trial fittings ensure perfect lens selection for your eyes.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Wide Selection</h4>
+                        <p>Daily, monthly, toric, multifocal, and colored lenses from leading manufacturers.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Education & Support</h4>
+                        <p>Comprehensive training on insertion, removal, and proper care techniques.</p>
+                    </div>
+                </div>
+
+                <div class="service-details-list">
+                    <h3>What We Offer</h3>
+                    <ul>
+                        <li>Initial consultation and eye health assessment</li>
+                        <li>Corneal topography for precise measurements</li>
+                        <li>Trial lens fitting and evaluation</li>
+                        <li>Hands-on insertion and removal training</li>
+                        <li>Care and maintenance instruction</li>
+                        <li>Follow-up appointments to ensure comfort</li>
+                        <li>Ongoing prescription management</li>
+                        <li>Annual supply ordering and delivery</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-info">
+                    <h4>Investment</h4>
+                    <p><strong>Contact Lens Fitting:</strong> $150 - $250</p>
+                    <p><strong>Daily Disposable Lenses:</strong> $45 - $85 per box</p>
+                    <p><strong>Monthly Lenses:</strong> $55 - $95 per box</p>
+                    <p><strong>Specialty Lenses:</strong> Custom pricing based on prescription</p>
+                </div>
+
+                <div class="service-cta">
+                    <a href="contact.html" class="btn btn-primary">Book Fitting</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Repairs & Adjustments -->
+        <div class="service-detail animate-on-scroll">
+            <div class="service-header-img">🔧</div>
+            <div class="service-content">
+                <h2>Professional Repairs & Adjustments</h2>
+                <p class="service-intro">
+                    Keep your eyewear in perfect condition with our professional repair and adjustment services. From
+                    minor tweaks to complex repairs, our skilled technicians ensure your glasses fit perfectly and
+                    function flawlessly.
+                </p>
+
+                <div class="service-features-grid">
+                    <div class="feature-box">
+                        <h4>Expert Technicians</h4>
+                        <p>Trained specialists with years of experience in eyewear repair and adjustment.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Quick Turnaround</h4>
+                        <p>Most adjustments completed while you wait; repairs typically within 48 hours.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Quality Parts</h4>
+                        <p>Use of genuine replacement parts and professional-grade repair materials.</p>
+                    </div>
+                </div>
+
+                <div class="service-details-list">
+                    <h3>Services Provided</h3>
+                    <ul>
+                        <li>Frame adjustments and alignment</li>
+                        <li>Nose pad replacement and adjustment</li>
+                        <li>Temple (arm) tightening and repair</li>
+                        <li>Hinge repair and replacement</li>
+                        <li>Screw replacement and tightening</li>
+                        <li>Lens replacement (prescription or non-prescription)</li>
+                        <li>Frame straightening and reshaping</li>
+                        <li>Professional cleaning and polishing</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-info">
+                    <h4>Pricing</h4>
+                    <p><strong>Complimentary Adjustments:</strong> Free for Lumeren customers</p>
+                    <p><strong>Basic Repairs:</strong> $15 - $45</p>
+                    <p><strong>Complex Repairs:</strong> $50 - $150</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">Free estimates provided before repair work begins.
+                    </p>
+                </div>
+
+                <div class="service-cta">
+                    <a href="contact.html" class="btn btn-primary">Request Repair</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Services -->
+        <div class="service-detail animate-on-scroll">
+            <div class="service-header-img">✨</div>
+            <div class="service-content">
+                <h2>Specialized Services</h2>
+                <p class="service-intro">
+                    Beyond our core offerings, we provide specialized services to address unique vision needs and
+                    enhance your eyewear experience.
+                </p>
+
+                <div class="service-details-list">
+                    <h3>Additional Services</h3>
+                    <ul>
+                        <li><strong>Dry Eye Treatment:</strong> Comprehensive assessment and treatment options for dry
+                            eye syndrome</li>
+                        <li><strong>Sports Vision:</strong> Specialized eyewear and vision training for athletic
+                            performance</li>
+                        <li><strong>Low Vision Services:</strong> Devices and support for those with reduced vision</li>
+                        <li><strong>Children's Eye Care:</strong> Specialized examinations and eyewear for young
+                            patients</li>
+                        <li><strong>Emergency Eye Care:</strong> Same-day appointments for urgent eye issues</li>
+                        <li><strong>Vision Therapy:</strong> Customized exercises to improve visual skills</li>
+                        <li><strong>Color Vision Testing:</strong> Comprehensive color deficiency assessment</li>
+                        <li><strong>Corporate Programs:</strong> On-site services and group discounts for businesses
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="service-cta">
+                    <a href="contact.html" class="btn btn-primary">Inquire About Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Lumeren Opticians</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .about-intro {
+            padding: 4rem 4%;
+            background: white;
+        }
+
+        .about-intro-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-intro h2 {
+            font-size: 3rem;
+            color: var(--midnight);
+            margin-bottom: 2rem;
+        }
+
+        .about-intro p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-section {
+            padding: 6rem 4%;
+            background: var(--midnight);
+            color: white;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 0.5px;
+        }
+
+        .stat-description {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 0.5rem;
+        }
+
+        .values-section {
+            padding: 6rem 4%;
+            background: var(--cream);
+        }
+
+        .values-grid {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: 4px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .value-card h3 {
+            font-size: 1.8rem;
+            color: var(--ocean);
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .team-section {
+            padding: 6rem 4%;
+            background: var(--sand);
+        }
+
+        .team-grid {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .team-photo {
+            height: 320px;
+            background: linear-gradient(135deg, var(--ocean), var(--sky));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-photo::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.15), transparent);
+        }
+
+        .team-info {
+            padding: 2rem;
+        }
+
+        .team-info h4 {
+            font-size: 1.5rem;
+            color: var(--midnight);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-role {
+            color: var(--sky);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .team-bio {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .timeline-section {
+            padding: 6rem 4%;
+            background: white;
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 3rem auto 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--sand);
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .timeline-item:nth-child(even)>* {
+            direction: ltr;
+        }
+
+        .timeline-content {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 4px;
+        }
+
+        .timeline-year {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content h4 {
+            font-size: 1.4rem;
+            color: var(--ocean);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--sky);
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px var(--sand);
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                padding-left: 60px;
+            }
+
+            .timeline-item:nth-child(even) {
+                direction: ltr;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            .about-intro h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <header class="page-header">
+        <h1>About Lumeren</h1>
+        <p>Two decades of excellence in vision care, combining cutting-edge technology with personalized service</p>
+    </header>
+
+    <section class="about-intro animate-on-scroll">
+        <div class="about-intro-content">
+            <h2>Our Story</h2>
+            <p>
+                Founded in 2004, Lumeren began with a simple vision: to provide exceptional eye care that combines
+                clinical excellence with refined aesthetics. What started as a small practice has grown into a premier
+                destination for discerning clients seeking the perfect balance of health, clarity, and style.
+            </p>
+            <p>
+                Our name, Lumeren, derives from the Latin "lumen" (light) and represents our commitment to illuminating
+                the path to better vision. Every day, we strive to bring clarity and brightness into the lives of our
+                clients through comprehensive eye care and meticulously curated eyewear.
+            </p>
+            <p>
+                Today, we serve thousands of clients annually, each receiving the personalized attention and expertise
+                that has become our hallmark. Our success is built on lasting relationships, clinical excellence, and an
+                unwavering commitment to quality.
+            </p>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="stats-grid animate-on-scroll">
+            <div class="stat-card">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Years of Excellence</div>
+                <div class="stat-description">Serving our community since 2004</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50K+</div>
+                <div class="stat-label">Happy Clients</div>
+                <div class="stat-description">Trusted by families across generations</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Frame Designs</div>
+                <div class="stat-description">Curated collection of premium eyewear</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Satisfaction Rate</div>
+                <div class="stat-description">Based on client surveys</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="section-header animate-on-scroll">
+            <h2>Our Values</h2>
+            <p>The principles that guide everything we do</p>
+        </div>
+        <div class="values-grid">
+            <div class="value-card animate-on-scroll">
+                <div class="value-icon">🎯</div>
+                <h3>Excellence</h3>
+                <p>We maintain the highest standards in every aspect of our practice, from clinical care to customer
+                    service. Our commitment to excellence drives continuous improvement and innovation.</p>
+            </div>
+            <div class="value-card animate-on-scroll">
+                <div class="value-icon">❤️</div>
+                <h3>Personalized Care</h3>
+                <p>Every client is unique, and we tailor our services to individual needs, preferences, and lifestyles.
+                    Your vision goals become our mission.</p>
+            </div>
+            <div class="value-card animate-on-scroll">
+                <div class="value-icon">🔬</div>
+                <h3>Innovation</h3>
+                <p>We embrace the latest advances in optometry and eyewear technology, ensuring our clients benefit from
+                    cutting-edge solutions and techniques.</p>
+            </div>
+            <div class="value-card animate-on-scroll">
+                <div class="value-icon">🤝</div>
+                <h3>Integrity</h3>
+                <p>Honest recommendations, transparent pricing, and ethical practices form the foundation of our client
+                    relationships and professional reputation.</p>
+            </div>
+            <div class="value-card animate-on-scroll">
+                <div class="value-icon">✨</div>
+                <h3>Aesthetic Vision</h3>
+                <p>We believe eyewear should be both functional and beautiful. Our curated collections reflect our
+                    passion for design and quality craftsmanship.</p>
+            </div>
+            <div class="value-card animate-on-scroll">
+                <div class="value-icon">🌱</div>
+                <h3>Community</h3>
+                <p>As a locally-owned practice, we're invested in our community's wellbeing through vision screenings,
+                    education, and charitable initiatives.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="section-header animate-on-scroll">
+            <h2>Meet Our Team</h2>
+            <p>Experienced professionals dedicated to your vision health</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-member animate-on-scroll">
+                <div class="team-photo">👨‍⚕️</div>
+                <div class="team-info">
+                    <h4>Dr. Michael Chen</h4>
+                    <div class="team-role">Lead Optometrist & Founder</div>
+                    <p class="team-bio">With over 25 years of experience, Dr. Chen leads our clinical team with
+                        expertise in comprehensive eye care and specialty contact lens fitting.</p>
+                </div>
+            </div>
+            <div class="team-member animate-on-scroll">
+                <div class="team-photo">👩‍⚕️</div>
+                <div class="team-info">
+                    <h4>Dr. Sarah Martinez</h4>
+                    <div class="team-role">Senior Optometrist</div>
+                    <p class="team-bio">Specializing in pediatric optometry and vision therapy, Dr. Martinez brings
+                        warmth and expertise to patient care for all ages.</p>
+                </div>
+            </div>
+            <div class="team-member animate-on-scroll">
+                <div class="team-photo">👨‍💼</div>
+                <div class="team-info">
+                    <h4>James Williams</h4>
+                    <div class="team-role">Licensed Optician</div>
+                    <p class="team-bio">A master of frame styling and lens technology, James ensures every client finds
+                        the perfect eyewear for their lifestyle and preferences.</p>
+                </div>
+            </div>
+            <!-- <div class="team-member animate-on-scroll">
+                <div class="team-photo">👩‍💼</div>
+                <div class="team-info">
+                    <h4>Emily Thompson</h4>
+                    <div class="team-role">Optical Specialist</div>
+                    <p class="team-bio">With an eye for design and a passion for customer service, Emily guides clients through our curated collection of designer frames.</p>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <div class="section-header animate-on-scroll">
+            <h2>Our Journey</h2>
+            <p>Milestones in our commitment to excellence</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item animate-on-scroll">
+                <div class="timeline-content">
+                    <div class="timeline-year">2004</div>
+                    <h4>The Beginning</h4>
+                    <p>Dr. Michael Chen opens Lumeren Opticians with a vision to provide exceptional eye care combined
+                        with curated eyewear collections.</p>
+                </div>
+                <div></div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item animate-on-scroll">
+                <div></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2008</div>
+                    <h4>Expansion & Growth</h4>
+                    <p>Practice expands to accommodate growing client base and introduces advanced diagnostic technology
+                        including digital retinal imaging.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item animate-on-scroll">
+                <div class="timeline-content">
+                    <div class="timeline-year">2012</div>
+                    <h4>Designer Partnerships</h4>
+                    <p>Establishes exclusive partnerships with premium eyewear designers, becoming a destination for
+                        luxury frames in the region.</p>
+                </div>
+                <div></div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item animate-on-scroll">
+                <div></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2016</div>
+                    <h4>Technology Advancement</h4>
+                    <p>Invests in cutting-edge diagnostic equipment including OCT scanning and advanced contact lens
+                        fitting technology.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item animate-on-scroll">
+                <div class="timeline-content">
+                    <div class="timeline-year">2020</div>
+                    <h4>Award Recognition</h4>
+                    <p>Receives "Excellence in Optometry" award and celebrates serving over 40,000 satisfied clients.
+                    </p>
+                </div>
+                <div></div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item animate-on-scroll">
+                <div></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2024</div>
+                    <h4>20th Anniversary</h4>
+                    <p>Marks two decades of excellence with practice renovation, team expansion, and introduction of
+                        specialized services.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--midnight); color: white; text-align: center;">
+        <div class="animate-on-scroll" style="max-width: 800px; margin: 0 auto;">
+            <h2 style="color: var(--sand); margin-bottom: 2rem;">Experience the Lumeren Difference</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.9;">
+                Visit our practice and discover why families have trusted us with their vision care for over two
+                decades.
+            </p>
+            <a href="contact.html" class="btn btn-primary">Schedule Your Visit</a>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

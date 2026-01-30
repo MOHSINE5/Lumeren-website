@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Lumeren Opticians</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .products-section {
+            padding: 4rem 4% 8rem;
+            background: var(--cream);
+        }
+
+        .category-section {
+            margin-bottom: 6rem;
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .category-header h2 {
+            font-size: 2.5rem;
+            color: var(--ocean);
+            margin-bottom: 1rem;
+        }
+
+        .category-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            height: 300px;
+            background: linear-gradient(135deg, var(--ocean), var(--sky));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.15), transparent);
+        }
+
+        .product-content {
+            padding: 2.5rem;
+        }
+
+        .product-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: var(--gold);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .product-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--midnight);
+        }
+
+        .product-content p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-features {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .product-features li {
+            padding: 0.5rem 0;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .product-features li::before {
+            content: '✓';
+            color: var(--sky);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--ocean);
+            margin: 1.5rem 0;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .price-range {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 400;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .product-cta {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background: var(--ocean);
+            color: white;
+            text-decoration: none;
+            border-radius: 2px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        .product-cta:hover {
+            background: var(--midnight);
+            transform: translateY(-2px);
+        }
+
+        .info-banner {
+            background: linear-gradient(135deg, var(--ocean), var(--sky));
+            color: white;
+            padding: 3rem 4%;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .info-banner h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-banner p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category-header h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <header class="page-header">
+        <h1>Our Products</h1>
+        <p>Discover our curated collection of premium eyewear, advanced lenses, and optical accessories designed to
+            enhance your vision and style</p>
+    </header>
+
+    <section class="products-section">
+        <!-- Designer Frames -->
+        <div class="category-section animate-on-scroll">
+            <div class="category-header">
+                <h2>Designer Frames</h2>
+                <p>Exclusive collection of meticulously crafted frames from renowned designers and independent artisans
+                    worldwide</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">🕶️</div>
+                    <div class="product-content">
+                        <span class="product-badge">Premium</span>
+                        <h3>Luxury Acetate Collection</h3>
+                        <p>Handcrafted acetate frames featuring bold designs and rich colors. Each piece is carefully
+                            constructed using traditional Italian methods.</p>
+                        <ul class="product-features">
+                            <li>Premium Italian acetate</li>
+                            <li>Hand-polished finish</li>
+                            <li>Adjustable nose pads</li>
+                            <li>Lifetime warranty</li>
+                        </ul>
+                        <div class="product-price">
+                            From $299 <span class="price-range">- $599</span>
+                        </div>
+                        <a href="contact.html" class="product-cta">Schedule Fitting</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">👓</div>
+                    <div class="product-content">
+                        <span class="product-badge">Best Seller</span>
+                        <h3>Titanium Elite Series</h3>
+                        <p>Ultra-lightweight titanium frames combining durability with sophisticated minimalist design.
+                            Perfect for all-day comfort.</p>
+                        <ul class="product-features">
+                            <li>Aerospace-grade titanium</li>
+                            <li>Feather-light construction</li>
+                            <li>Hypoallergenic material</li>
+                            <li>Flexible temples</li>
+                        </ul>
+                        <div class="product-price">
+                            From $399 <span class="price-range">- $749</span>
+                        </div>
+                        <a href="contact.html" class="product-cta">Schedule Fitting</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">✨</div>
+                    <div class="product-content">
+                        <h3>Classic Metal Collection</h3>
+                        <p>Timeless metal frames available in various finishes. Versatile designs suitable for both
+                            professional and casual wear.</p>
+                        <ul class="product-features">
+                            <li>Stainless steel construction</li>
+                            <li>Multiple color options</li>
+                            <li>Spring hinges</li>
+                            <li>Corrosion resistant</li>
+                        </ul>
+                        <div class="product-price">
+                            From $189 <span class="price-range">- $349</span>
+                        </div>
+                        <a href="contact.html" class="product-cta">Schedule Fitting</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🎨</div>
+                    <div class="product-content">
+                        <span class="product-badge">New Arrival</span>
+                        <h3>Artisan Limited Edition</h3>
+                        <p>Exclusive limited-run frames from independent designers. Each piece is numbered and comes
+                            with a certificate of authenticity.</p>
+                        <ul class="product-features">
+                            <li>Limited production runs</li>
+                            <li>Unique colorways</li>
+                            <li>Numbered editions</li>
+                            <li>Designer collaboration</li>
+                        </ul>
+                        <div class="product-price">
+                            From $499 <span class="price-range">- $899</span>
+                        </div>
+                        <a href="contact.html" class="product-cta">Schedule Fitting</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Premium Lenses -->
+        <div class="category-section animate-on-scroll">
+            <div class="category-header">
+                <h2>Premium Lenses</h2>
+                <p>Advanced lens technology providing superior clarity, protection, and visual comfort</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">🔬</div>
+                    <div class="product-content">
+                        <span class="product-badge">Advanced Tech</span>
+                        <h3>Blue Light Defense</h3>
+                        <p>State-of-the-art lenses designed to filter harmful blue light from digital screens while
+                            maintaining color accuracy.</p>
+                        <ul class="product-features">
+                            <li>95% blue light filtration</li>
+                            <li>Anti-reflective coating</li>
+                            <li>Scratch-resistant surface</li>
+                            <li>UV400 protection</li>
+                        </ul>
+                        <div class="product-price">
+                            From $149 <span class="price-range">per pair</span>
+                        </div>
+                        <a href="contact.html" class="product-cta">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">📊</div>
+                    <div class="product-content">
+                        <span class="product-badge">Premium</span>
+                        <h3>Progressive Precision</h3>
+                        <p>Seamless multifocal lenses offering smooth transition between near, intermediate, and
+                            distance vision zones.</p>
+                        <ul class="product-features">
+                            <li>No visible line design</li>
+                            <li>Wide viewing zones</li>
+                            <li>Customized measurements</li>
+                            <li>Distortion-free optics</li>
+                        </ul>
+                        <div class="product-price">
+                            From $349 <span class="price-range">per pair</span>
+                        </div>
+                        <a href="contact.html" class="product-cta">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">💎</div>
+                    <div class="product-content">
+                        <h3>High-Index Ultra-Thin</h3>
+                        <p>Ultra-thin lenses for strong prescriptions. Lighter and more aesthetic than traditional thick
+                            lenses.</p>
+                        <ul class="product-features">
+                            <li>40% thinner than standard</li>
+                            <li>Lighter weight</li>
+                            <li>Reduced edge thickness</li>
+                            <li>Enhanced aesthetics</li>
+                        </ul>
+                        <div class="product-price">
+                            From $249 <span class="price-range">per pair</span>
+                        </div>
+                        <a href="contact.html" class="product-cta">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🌈</div>
+                    <div class="product-content">
+                        <h3>Photochromic Transitions</h3>
+                        <p>Intelligent lenses that automatically darken in sunlight and clear indoors for all-day
+                            versatility.</p>
+                        <ul class="product-features">
+                            <li>Automatic light adjustment</li>
+                            <li>100% UV protection</li>
+                            <li>Multiple color options</li>
+                            <li>Fast activation</li>
+                        </ul>
+                        <div class="product-price">
+                            From $199 <span class="price-range">per pair</span>
+                        </div>
+                        <a href="contact.html" class="product-cta">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-banner animate-on-scroll">
+            <h3>Not Sure Which Lenses Are Right for You?</h3>
+            <p>Our expert opticians will guide you through all available options and help you select the perfect lenses
+                for your lifestyle and visual needs.</p>
+            <a href="contact.html" class="btn btn-primary">Book Free Consultation</a>
+        </div>
+
+        <!-- Sunglasses -->
+        <div class="category-section animate-on-scroll">
+            <div class="category-header">
+                <h2>Premium Sunglasses</h2>
+                <p>Sophisticated sun protection combining UV defense with exceptional style</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">🌞</div>
+                    <div class="product-content">
+                        <span class="product-badge">UV Protection</span>
+                        <h3>Polarized Performance</h3>
+                        <p>High-performance polarized sunglasses eliminating glare while providing superior clarity and
+                            color enhancement.</p>
+                        <ul class="product-features">
+                            <li>99.9% glare reduction</li>
+                            <li>UV400 protection</li>
+                            <li>Impact-resistant lenses</li>
+                            <li>Multiple frame styles</li>
+                        </ul>
+                        <div class="product-price">
+                            From $279 <span class="price-range">- $529</span>
+                        </div>
+                        <a href="contact.html" class="product-cta">View Collection</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🕶️</div>
+                    <div class="product-content">
+                        <span class="product-badge">Prescription Available</span>
+                        <h3>Prescription Sunglasses</h3>
+                        <p>Custom prescription sunglasses combining vision correction with complete sun protection in
+                            your choice of designer frames.</p>
+                        <ul class="product-features">
+                            <li>Full prescription range</li>
+                            <li>Premium sun lenses</li>
+                            <li>Designer frame options</li>
+                            <li>Polarized available</li>
+                        </ul>
+                        <div class="product-price">
+                            From $349 <span class="price-range">- $799</span>
+                        </div>
+                        <a href="contact.html" class="product-cta">View Collection</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">⛱️</div>
+                    <div class="product-content">
+                        <h3>Sport & Active Collection</h3>
+                        <p>Durable sunglasses engineered for active lifestyles. Featuring wraparound designs and secure
+                            fit systems.</p>
+                        <ul class="product-features">
+                            <li>Impact-resistant frames</li>
+                            <li>Non-slip grip</li>
+                            <li>Wraparound coverage</li>
+                            <li>Interchangeable lenses</li>
+                        </ul>
+                        <div class="product-price">
+                            From $199 <span class="price-range">- $399</span>
+                        </div>
+                        <a href="contact.html" class="product-cta">View Collection</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Lenses & Accessories -->
+        <div class="category-section animate-on-scroll">
+            <div class="category-header">
+                <h2>Contact Lenses & Accessories</h2>
+                <p>Premium contact lenses and care products for optimal eye health and comfort</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">👁️</div>
+                    <div class="product-content">
+                        <span class="product-badge">Comfort Plus</span>
+                        <h3>Daily Disposable Lenses</h3>
+                        <p>Premium daily contact lenses offering maximum convenience and hygiene. Perfect for those with
+                            active lifestyles.</p>
+                        <ul class="product-features">
+                            <li>Fresh pair every day</li>
+                            <li>High oxygen permeability</li>
+                            <li>UV protection</li>
+                            <li>30 or 90 pack options</li>
+                        </ul>
+                        <div class="product-price">
+                            From $45 <span class="price-range">per box</span>
+                        </div>
+                        <a href="contact.html" class="product-cta">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🔍</div>
+                    <div class="product-content">
+                        <h3>Monthly Extended Wear</h3>
+                        <p>High-performance monthly lenses engineered for all-day comfort and exceptional visual
+                            clarity.</p>
+                        <ul class="product-features">
+                            <li>30-day wear cycle</li>
+                            <li>Deposit-resistant surface</li>
+                            <li>Breathable material</li>
+                            <li>6-pack boxes</li>
+                        </ul>
+                        <div class="product-price">
+                            From $55 <span class="price-range">per box</span>
+                        </div>
+                        <a href="contact.html" class="product-cta">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">💧</div>
+                    <div class="product-content">
+                        <h3>Premium Care Kit</h3>
+                        <p>Complete contact lens care system with advanced cleaning and disinfection formula.</p>
+                        <ul class="product-features">
+                            <li>All-in-one solution</li>
+                            <li>Lens case included</li>
+                            <li>3-6 month supply</li>
+                            <li>Gentle on eyes</li>
+                        </ul>
+                        <div class="product-price">
+                            From $24 <span class="price-range">per bottle</span>
+                        </div>
+                        <a href="contact.html" class="product-cta">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🧼</div>
+                    <div class="product-content">
+                        <h3>Eyewear Care Accessories</h3>
+                        <p>Professional-grade cleaning solutions and microfiber cloths for maintaining pristine eyewear.
+                        </p>
+                        <ul class="product-features">
+                            <li>Anti-fog spray</li>
+                            <li>Microfiber cloths</li>
+                            <li>Cleaning solution</li>
+                            <li>Protective cases</li>
+                        </ul>
+                        <div class="product-price">
+                            From $12 <span class="price-range">- $45</span>
+                        </div>
+                        <a href="contact.html" class="product-cta">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-banner animate-on-scroll">
+        <h3>Experience Our Products in Person</h3>
+        <p>Visit our showroom to try on frames, test lenses, and receive personalized recommendations from our expert
+            team.</p>
+        <a href="contact.html" class="btn btn-primary">Book Appointment</a>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
